@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iU6-84-3N5">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Select image-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WhatFlower" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-za-8OH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I9y-XC-vgb">
+                                <rect key="frame" x="16" y="590" width="382" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="lhk-uc-Xxp"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q7w-en-OWi">
+                                <rect key="frame" x="16" y="104" width="382" height="470"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I9y-XC-vgb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="1ck-Aw-2qM"/>
+                            <constraint firstItem="Q7w-en-OWi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="GpR-7t-HBH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q7w-en-OWi" secondAttribute="trailing" constant="16" id="Ogy-3D-qOQ"/>
+                            <constraint firstItem="ZjF-za-8OH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pu1-ZP-6q1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZjF-za-8OH" secondAttribute="trailing" id="RNM-3f-29D"/>
+                            <constraint firstAttribute="bottom" secondItem="ZjF-za-8OH" secondAttribute="bottom" id="SN6-qS-lgW"/>
+                            <constraint firstItem="Q7w-en-OWi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="SNm-2i-Obj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="I9y-XC-vgb" secondAttribute="bottom" constant="16" id="Tk9-ik-Cms"/>
+                            <constraint firstItem="I9y-XC-vgb" firstAttribute="top" secondItem="Q7w-en-OWi" secondAttribute="bottom" constant="16" id="fOH-J3-WMZ"/>
+                            <constraint firstItem="ZjF-za-8OH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gHC-6C-xbQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I9y-XC-vgb" secondAttribute="trailing" constant="16" id="iBg-QR-VXH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select image" largeTitleDisplayMode="never" id="OgP-vo-eY1">
+                        <rightBarButtonItems>
+                            <barButtonItem image="camera.fill" catalog="system" id="Vy9-Sc-RPE">
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" id="stx-um-v9P"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem tag="1" image="photo.fill" catalog="system" id="XdP-lR-QbL">
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" id="8Ks-6m-hV8"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="ZjF-za-8OH" id="uPO-x9-Yqp"/>
+                        <outlet property="resultImageView" destination="Q7w-en-OWi" id="wm6-HL-5Ra"/>
+                        <outlet property="textView" destination="I9y-XC-vgb" id="KLJ-JT-901"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JtN-8b-U9B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iU6-84-3N5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5OQ-r8-6us">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="0x4-fX-HMf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sjc-qO-q8J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+    </resources>
+</document>
