@@ -83,6 +83,10 @@ struct OrderTotalView: View {
 
 struct OrderTotalPreviews: PreviewProvider {
     static var previews: some View {
-        OrderTotalView(total: 12.5)
+        Group {
+            OrderTotalView(total: 12.5).previewLayout(.sizeThatFits).environment(\.sizeCategory, .accessibilityExtraExtraExtraLarge)
+            OrderTotalView(total: 12.5).previewLayout(.sizeThatFits).environment(\.sizeCategory, .extraSmall)
+            OrderTotalView(total: 12.5).previewLayout(.sizeThatFits).environment(\.sizeCategory, .extraSmall).colorScheme(.dark)
+        }
     }
 }
