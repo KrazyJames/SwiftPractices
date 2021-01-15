@@ -37,7 +37,12 @@ struct StepView: View {
     let entry: Provider.Entry
     
     var body: some View {
-        Text("\(entry.steps) steps")
+        VStack {
+            Spacer()
+            Text("\(entry.steps) steps").foregroundColor(entry.steps > 5000*7 ? .green : .red)
+            Spacer()
+            Text("Goal: 35k steps").font(.subheadline)
+        }.padding()
     }
 }
 

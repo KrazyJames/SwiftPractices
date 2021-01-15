@@ -10,7 +10,7 @@ import HealthKit
 
 class StepsViewModel: ObservableObject {
     private var healthStore: HealthStore?
-    @Published var steps: [StepsInfo] = []
+    @Published var steps = [StepsInfo]()
     
     init() {
         healthStore = HealthStore()
@@ -22,7 +22,9 @@ class StepsViewModel: ObservableObject {
         statistics.enumerateStatistics(from: fromDate, to: now) { (statistics, stopPointer) in
             guard let count = statistics.sumQuantity()?.doubleValue(for: .count()) else { return }
             let step = StepsInfo(count: Int(count), date: statistics.startDate)
-            self.steps.append(step)
+            DispatchQueue.main.async {
+                self.steps.append(step)
+            }
         }
     }
     
