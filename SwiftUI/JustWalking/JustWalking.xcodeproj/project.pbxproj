@@ -16,6 +16,10 @@
 		1A31E2CA25B0FE110054AFEC /* JWWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A31E2C925B0FE110054AFEC /* JWWidget.swift */; };
 		1A31E2CC25B0FE170054AFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A31E2CB25B0FE170054AFEC /* Assets.xcassets */; };
 		1A31E2D025B0FE170054AFEC /* JWWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A31E2C225B0FE100054AFEC /* JWWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1ABA4ACE25B13FCC005B34CF /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA4ACD25B13FCC005B34CF /* HealthStore.swift */; };
+		1ABA4AD425B143B9005B34CF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABA4AD325B143B9005B34CF /* HealthKit.framework */; };
+		1ABA4AD925B14919005B34CF /* StepsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA4AD825B14919005B34CF /* StepsInfo.swift */; };
+		1ABA4ADF25B14B23005B34CF /* StepsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABA4ADE25B14B23005B34CF /* StepsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		1A31E2CD25B0FE170054AFEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A31E2D725B0FE790054AFEC /* JWWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JWWidgetExtension.entitlements; sourceTree = "<group>"; };
 		1A31E2D825B0FFDC0054AFEC /* JustWalking.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustWalking.entitlements; sourceTree = "<group>"; };
+		1ABA4ACD25B13FCC005B34CF /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
+		1ABA4AD325B143B9005B34CF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		1ABA4AD825B14919005B34CF /* StepsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsInfo.swift; sourceTree = "<group>"; };
+		1ABA4ADE25B14B23005B34CF /* StepsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABA4AD425B143B9005B34CF /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +113,9 @@
 			children = (
 				1A31E2D825B0FFDC0054AFEC /* JustWalking.entitlements */,
 				1A31E2AD25B0F1100054AFEC /* JustWalkingApp.swift */,
-				1A31E2AF25B0F1100054AFEC /* ContentView.swift */,
+				1ABA4AD725B14908005B34CF /* Models */,
+				1ABA4ADD25B14B14005B34CF /* ViewModels */,
+				1ABA4ADC25B14AE8005B34CF /* Views */,
 				1A31E2B125B0F1180054AFEC /* Assets.xcassets */,
 				1A31E2B625B0F1180054AFEC /* Info.plist */,
 				1A31E2B325B0F1180054AFEC /* Preview Content */,
@@ -123,6 +134,7 @@
 		1A31E2C325B0FE110054AFEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1ABA4AD325B143B9005B34CF /* HealthKit.framework */,
 				1A31E2C425B0FE110054AFEC /* WidgetKit.framework */,
 				1A31E2C625B0FE110054AFEC /* SwiftUI.framework */,
 			);
@@ -137,6 +149,31 @@
 				1A31E2CD25B0FE170054AFEC /* Info.plist */,
 			);
 			path = JWWidget;
+			sourceTree = "<group>";
+		};
+		1ABA4AD725B14908005B34CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1ABA4ACD25B13FCC005B34CF /* HealthStore.swift */,
+				1ABA4AD825B14919005B34CF /* StepsInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1ABA4ADC25B14AE8005B34CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1A31E2AF25B0F1100054AFEC /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1ABA4ADD25B14B14005B34CF /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1ABA4ADE25B14B23005B34CF /* StepsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A31E2B025B0F1100054AFEC /* ContentView.swift in Sources */,
+				1ABA4AD925B14919005B34CF /* StepsInfo.swift in Sources */,
+				1ABA4ACE25B13FCC005B34CF /* HealthStore.swift in Sources */,
 				1A31E2AE25B0F1100054AFEC /* JustWalkingApp.swift in Sources */,
+				1ABA4ADF25B14B23005B34CF /* StepsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
